@@ -1,18 +1,44 @@
 #include "monty.h"
-
-int main(int argc, char *argv[])
+/**
+ * main - entry point
+ * @argc: arguments count
+ * @argv: arguments vector
+ * Return: success
+ */
+int main(int argc, char **argv)
 {
-	FILE *fp;
+	char *line = NULL, *tokenizer = NULL;
+	size_t size = 0;
+	stack_t *stack = NULL;
+	unsigned int number = 0;
+
+	fl = fopen(argv[1], "r");
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	
-	fp = fopen(argv[1],'r');
-	if (fp == NULL)
+
+	if (fl == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n",argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+	while (getline(&line, &size, fl) != -1)
+	{
+		number++;
+		tokenizer = strtok(line, "\n ");
+		if (tokenizer == NULL)
+			continue;
+		if (strcmp(tokenizer, "push") == 0)
+		{
+			tokenizer = strtok(NULL, "\n ");
+			func_push(tokenizer, &stack, number);
+		}
+		else
+			get_operator(tokenizer, &stack, number);
+	}
+	fclose(fl), _free(stack, line);
+	return (EXIT_SUCCESS);
 }
