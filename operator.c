@@ -13,6 +13,8 @@ int get_operator(char *op, stack_t **stack, unsigned int line_number)
 {
 		instruction_t functions[] = {
 		{"pall", func_pall},
+		{"pint", func_pint},
+		{"pop", func_pop},
 		{NULL, NULL},
 	};
 	int x = 0;
