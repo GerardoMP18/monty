@@ -46,6 +46,7 @@ int get_operator(char *op, stack_t **stack, unsigned int line_number);
 /*Function*/
 void func_pall(stack_t **stack, unsigned int line_number);
 void func_push(char *token, stack_t **stack, unsigned int line_number);
+void func_pint(stack_t **stack, unsigned int line_number);
 void _free(stack_t *stack, char *line);
 
 #endif /* _MONTY_H_*/
