@@ -51,6 +51,7 @@ void func_pop(stack_t **stack, unsigned int line_number);
 void func_swap(stack_t **stack, unsigned int line_number);
 void func_add(stack_t **stack, unsigned int line_number);
 void func_nop(stack_t **stack, unsigned int line_number);
+void func_sub(stack_t **stack, unsigned int line_number);
 void _free(stack_t *stack, char *line);
 
 #endif /* _MONTY_H_*/
