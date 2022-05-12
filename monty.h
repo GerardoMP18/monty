@@ -33,8 +33,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /*Global variables*/
 extern FILE *fl;
@@ -46,6 +46,8 @@ int get_operator(char *op, stack_t **stack, unsigned int line_number);
 /*Function*/
 void func_pall(stack_t **stack, unsigned int line_number);
 void func_push(char *token, stack_t **stack, unsigned int line_number);
+void func_pint(stack_t **stack, unsigned int line_number);
+void func_pop(stack_t **stack, unsigned int line_number);
 void _free(stack_t *stack, char *line);
 
 #endif /* _MONTY_H_*/
