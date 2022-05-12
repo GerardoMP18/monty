@@ -14,14 +14,16 @@ void func_push(char *token, stack_t **stack, unsigned int line_number)
 
 	if (token == NULL)
 	{
-		fprintf(stderr, "1 : L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	while (token[i] != '\0')
 	{
+		if (*token == '-')
+			i++;
 		if (isdigit(token[i]) == 0)
 		{
-			fprintf(stderr, "2 : L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 		i++;
