@@ -19,7 +19,7 @@ void func_push(char *token, stack_t **stack, unsigned int line_number)
 	}
 	while (token[i] != '\0')
 	{
-		if (*token == '-')
+		if (token[i] == '-')
 			i++;
 		if (isdigit(token[i]) == 0)
 		{
