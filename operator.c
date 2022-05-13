@@ -19,6 +19,7 @@ int get_operator(char *op, stack_t **stack, unsigned int line_number)
 		{"add", func_add},
 		{"nop", func_nop},
 		{"sub", func_sub},
+		{"div", func_div},
 		{NULL, NULL},
 	};
 	int x = 0;
