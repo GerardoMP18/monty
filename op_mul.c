@@ -13,7 +13,7 @@ void func_mul(stack_t **stack, unsigned int line_number)
 	if (*stack != NULL && (*stack)->next != NULL)
 	{
 		mul = (*stack)->n;
-		(*stack)->next->n -= mul;
+		(*stack)->next->n *= mul;
 		func_pop(stack, line_number);
 	}
 	else
@@ -21,6 +21,4 @@ void func_mul(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n *= (*stack)->n;
-	func_pop(stack, line_number);
 }
