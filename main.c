@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	{
 		number++;
 		tokenizer = strtok(line, "\n ");
-		if (tokenizer == NULL)
+		if (tokenizer == NULL || strncmp(line, "#", 1) == 0)
 			continue;
 		if (strcmp(tokenizer, "push") == 0)
 		{
