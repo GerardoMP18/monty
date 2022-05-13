@@ -24,5 +24,4 @@ void func_mod(stack_t **stack, unsigned int line_number)
 	mod = (*stack)->n;
 	(*stack)->next->n %= mod;
 	func_pop(stack, line_number);
-
 }
